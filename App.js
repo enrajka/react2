@@ -78,11 +78,19 @@ class App extends React.Component {
   }
 
   displayBody(index) {
+    let count = 0;
     if (index != null) {
-      console.log(this.state.addedItems[index].sections);
-      // for (let s = 0; s < this.state.addedItems[index].sections.length; s++) {
-      //   //if ()
-      // }
+      console.log(this.state.addedItems[index].data.sections);
+      for (let s = 0; s < this.state.addedItems[index].data.sections.length; s++) {
+        if (this.state.addedItems[index].data.sections[s] != null) {
+          count++;
+        }
+      }
+      if (count === this.state.addedItems[index].data.sections.length) {
+        return "No Lecture Chosen";
+      } else if (count === 1) {
+        
+      }
     }
   }
 
